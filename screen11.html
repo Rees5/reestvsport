@@ -1,0 +1,56 @@
+<i class="video-play-icon fa fa-youtube-play"></i>
+<div class="bs-example">  
+    <!-- Button HTML (to Trigger Modal) --><a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Man U vs Club Brugge(23:00)</a>  
+    <!-- Button HTML (to Trigger Modal) --><a href="#myModal1" class="btn btn-lg btn-primary" data-toggle="modal">Arsenal vs Olympiacos(23:00)</a>  
+    
+    <!-- Modal HTML -->  
+    <div id="myModal" class="modal fade">  
+        <div class="modal-dialog">  
+            <div class="modal-content">  
+                <div class="modal-header"> <span class="close" data-dismiss="modal" >X</span>  
+                    <h4 class="modal-title">Rees TV: UEFA Europa League</h4> <p>Man U vs Club Brugge(23:00)</p> 
+                </div>  
+                <div class="modal-body"> <iframe id="cartoonVideo" autoplay width="560" height="315" src="https://www.eplstream.xyz/streams/esite11.html" frameborder="0" allowfullscreen></iframe> </div>  
+            </div>  
+        </div>  
+    </div> 
+    <div id="myModal1" class="modal fade">  
+        <div class="modal-dialog">  
+            <div class="modal-content">  
+                <div class="modal-header"> <span class="close" data-dismiss="modal" >X</span>  
+                    <h4 class="modal-title">Rees TV: UEFA Europa League</h4><p>Arsenal vs Olympiacos(23:00)</p>  
+                </div>  
+                <div class="modal-body"> <iframe id="cartoonVideo" autoplay width="560" height="315" src="https://www.eplstream.xyz/streams/esite12.html" frameborder="0" allowfullscreen></iframe> </div>  
+            </div>  
+        </div>  
+    </div>  
+</div> 
+
+<script type="text/javascript">  
+    $(document).ready(function() {  
+        /* Get iframe src attribute value i.e. YouTube video url 
+        and store it in a variable */  
+        var url = $("#cartoonVideo").attr('src');  
+        /* Assign empty url value to the iframe src attribute when 
+        modal hide, which stop the video playing */  
+        $("#myModal").on('hide.bs.modal', function() {  
+            $("#cartoonVideo").attr('src', '');  
+        });  
+        /* Assign the initially stored url back to the iframe src 
+        attribute when modal is displayed again */  
+        $("#myModal").on('show.bs.modal', function() {  
+            $("#cartoonVideo").attr('src', url);  
+        });  
+    });  
+</script> 
+
+<style type="text/css">  
+    .modal-content iframe {  
+        margin: 0 auto;  
+        display: block;  
+    }  
+</style>  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>  
+<!-- Latest compiled and minified JavaScript -->  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
